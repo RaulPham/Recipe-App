@@ -1,5 +1,5 @@
 //
-//  FetchRecipeAppApp.swift
+//  RecipeApp.swift
 //  FetchRecipeApp
 //
 //  Created by Pham on 2/27/23.
@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct FetchRecipeAppApp: App {
+struct RecipeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }
