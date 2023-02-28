@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5A102C4829AD68AB007EA910 /* Dessert.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A102C4729AD68AB007EA910 /* Dessert.json */; };
 		5A102C4A29AD6A04007EA910 /* DessertDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A102C4929AD6A04007EA910 /* DessertDetail.json */; };
+		5A102C7729AD9A33007EA910 /* Meals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A102C7629AD9A33007EA910 /* Meals.swift */; };
+		5A102C7929AD9AFD007EA910 /* MealModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A102C7829AD9AFD007EA910 /* MealModel.swift */; };
 		5ABC5FC729AD642200F4CB8C /* RecipeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABC5FC629AD642200F4CB8C /* RecipeApp.swift */; };
 		5ABC5FC929AD642200F4CB8C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABC5FC829AD642200F4CB8C /* HomeView.swift */; };
 		5ABC5FCB29AD642400F4CB8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ABC5FCA29AD642400F4CB8C /* Assets.xcassets */; };
@@ -18,6 +20,8 @@
 /* Begin PBXFileReference section */
 		5A102C4729AD68AB007EA910 /* Dessert.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Dessert.json; sourceTree = "<group>"; };
 		5A102C4929AD6A04007EA910 /* DessertDetail.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DessertDetail.json; sourceTree = "<group>"; };
+		5A102C7629AD9A33007EA910 /* Meals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meals.swift; sourceTree = "<group>"; };
+		5A102C7829AD9AFD007EA910 /* MealModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealModel.swift; sourceTree = "<group>"; };
 		5ABC5FC329AD642200F4CB8C /* FetchRecipeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FetchRecipeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ABC5FC629AD642200F4CB8C /* RecipeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeApp.swift; sourceTree = "<group>"; };
 		5ABC5FC829AD642200F4CB8C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -46,6 +50,7 @@
 		5A102C7329AD9910007EA910 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5A102C7629AD9A33007EA910 /* Meals.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -53,6 +58,7 @@
 		5A102C7429AD991B007EA910 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				5A102C7829AD9AFD007EA910 /* MealModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -186,6 +192,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5ABC5FC929AD642200F4CB8C /* HomeView.swift in Sources */,
+				5A102C7729AD9A33007EA910 /* Meals.swift in Sources */,
+				5A102C7929AD9AFD007EA910 /* MealModel.swift in Sources */,
 				5ABC5FC729AD642200F4CB8C /* RecipeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

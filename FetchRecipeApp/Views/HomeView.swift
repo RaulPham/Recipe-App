@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
+      @EnvironmentObject var mealModel: MealModel
+      
     var body: some View {
           NavigationView {
                 List {
