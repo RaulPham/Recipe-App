@@ -8,6 +8,7 @@
 import Foundation
 
 class MealModel: ObservableObject {
+      @Published var meals = Dessert(meals: [Meal(strMeal: "", strMealThumb: "", idMeal: "")])
       
       init() {
             getLocalData()
@@ -25,6 +26,7 @@ class MealModel: ObservableObject {
                   
                   print(mealModel)
                   
+                  self.meals = mealModel
             } catch {
                   print(error)
             }
