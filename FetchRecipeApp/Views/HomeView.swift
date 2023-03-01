@@ -14,8 +14,8 @@ struct HomeView: View {
     var body: some View {
           NavigationView {
                 ScrollView {
-                        ForEach(mealModel.dessert.meals, id: \.self) { index in
-                              NavigationLink(destination: DetailView()) {
+                        ForEach(mealModel.dessert.meals, id: \.idMeal) { index in
+                              NavigationLink(destination: DetailView(mealId: index.idMeal)) {
                                     Text(index.strMeal)
                               }
                         }

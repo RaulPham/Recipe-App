@@ -8,12 +8,10 @@
 import Foundation
 
 struct Dessert: Decodable {
-      //var id: UUID?
       var meals: [Meal]
 }
 
 struct Meal: Hashable, Decodable {
-      //var id: UUID?
       var strMeal: String
       var strMealThumb: String
       var idMeal: String
