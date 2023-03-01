@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DetailView: View {
-      @ObservedObject var mealDetailModel =  MealDetailModel()
+      @ObservedObject var mealDetailModel = MealDetailModel()
       let mealId: String
       
       var body: some View {
@@ -19,16 +19,26 @@ struct DetailView: View {
                                     VStack(alignment: .leading) {
                                           ZStack {
                                                 ImageDetailView(model: index, width: geo.size.width, height: geo.size.height
-                                                + 300)
+                                                                + 300)
                                                 .cornerRadius(5)
                                                 .shadow(color: Color(.sRGB, red: 0, green: 0, blue: 0, opacity: 0.5), radius: 10, x: -5, y: 6)
                                           }
-                                          
-                                          Text(index.strCategory)
                                     }
-                                    .navigationTitle(index.strMeal)
+                                    
+                                    VStack(alignment: .leading) {
+                                          Text("Ingredients")
+                                              .font(Font.custom("Avenir Heavy", size: 16))
+                                              .padding([.bottom, .top], 5)
+                                          
+                                          ForEach(mealDetailModel.extractMeasuresAndIngredients(), id: \.1) { measure, ingredient in
+                                                Text("• " + measure.lowercased() + " " + ingredient.lowercased())
+                                                      .font(Font.custom("Avenir", size: 15))
+                                          }
+                                    }
+                                    .padding(.leading)
                               }
                         }
+                      
                   }
                   .padding([.leading, .trailing])
             }
@@ -40,6 +50,6 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(mealId: "")
+          DetailView(mealId: "")
     }
 }
