@@ -88,4 +88,23 @@ class MealDetailModel: ObservableObject {
             
             return false
       }
+      
+      func extractSentences(from instructions: String) -> [String] {
+            var sentences: [String] = []
+            var currentSentence: String = ""
+            
+            for char in instructions {
+                  currentSentence.append(char)
+                  if char == "." {
+                        sentences.append(currentSentence)
+                        currentSentence = ""
+                  }
+            }
+            
+            if !currentSentence.isEmpty {
+                  sentences.append(currentSentence)
+            }
+            
+            return sentences
+      }
 }
