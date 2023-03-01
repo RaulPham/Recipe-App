@@ -12,7 +12,7 @@ struct Dessert: Decodable {
       var meals: [Meal]
 }
 
-struct Meal: Decodable {
+struct Meal: Hashable, Decodable {
       //var id: UUID?
       var strMeal: String
       var strMealThumb: String

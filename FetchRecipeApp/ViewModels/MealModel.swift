@@ -8,27 +8,73 @@
 import Foundation
 
 class MealModel: ObservableObject {
-      @Published var meals = Dessert(meals: [Meal(strMeal: "", strMealThumb: "", idMeal: "")])
+      @Published var dessert = Dessert(meals: [Meal(strMeal: "", strMealThumb: "", idMeal: "")])
+      //@Published var idMeal: String
       
       init() {
-            getLocalData()
+            getDessert()
+            //storeMealId()
       }
       
-      func getLocalData() {
-            let jsonUrl = Bundle.main.url(forResource: "Dessert", withExtension: "json")
+      func getDessert() {
+            let url = URL(string: "https://themealdb.com/api/json/v1/1/filter.php?c=Dessert")
             
-            do {
-                  let jsonData = try Data(contentsOf: jsonUrl!)
-                  
-                  let jsonDecoder = JSONDecoder()
-                  
-                 let mealModel = try jsonDecoder.decode(Dessert.self, from: jsonData)
-                  
-                  print(mealModel)
-                  
-                  self.meals = mealModel
-            } catch {
-                  print(error)
+            guard url != nil else {
+                  return
             }
+            
+            let task = URLSession.shared.dataTask(with: url!) { [weak self] data, _, error in
+                  guard let data = data, error == nil else {
+                        return
+                  }
+                  
+                  do {
+                        let jsonData = try JSONDecoder().decode(Dessert.self, from: data)
+                        DispatchQueue.main.async {
+                              self?.dessert = jsonData
+                        }
+                  } catch {
+                        print(error)
+                  }
+            }
+            
+            task.resume()
       }
+      
+      func storeMealId() {
+            
+      }
+      
+      /*
+      func getDessertDetail() {
+            var mealId: String
+            
+            for id in idMeal {
+                  
+            }
+            
+            let url = URL(string: "https://themealdb.com/api/json/v1/1/lookup.php?i=MEAL_ID")
+            
+            guard url != nil else {
+                  return
+            }
+            
+            let task = URLSession.shared.dataTask(with: url!) { [weak self] data, _, error in
+                  guard let data = data, error == nil else {
+                        return
+                  }
+                  
+                  do {
+                        let jsonData = try JSONDecoder().decode(Dessert.self, from: data)
+                        DispatchQueue.main.async {
+                              self?.dessert = jsonData
+                        }
+                  } catch {
+                        print(error)
+                  }
+            }
+            
+            task.resume()
+      }
+       */
 }

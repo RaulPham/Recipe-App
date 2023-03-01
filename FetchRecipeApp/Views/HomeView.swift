@@ -9,15 +9,16 @@ import SwiftUI
 
 struct HomeView: View {
       @EnvironmentObject var mealModel: MealModel
+      @State var mealId: String = ""
       
     var body: some View {
           NavigationView {
-                List {
-                      
-                }
-                .navigationTitle("List")
-                .onAppear {
-                      
+                ScrollView {
+                        ForEach(mealModel.dessert.meals, id: \.self) { index in
+                              NavigationLink(destination: DetailView()) {
+                                    Text(index.strMeal)
+                              }
+                        }
                 }
           }
     }
