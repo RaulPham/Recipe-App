@@ -17,6 +17,7 @@
 		5ABC5FCE29AD642400F4CB8C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ABC5FCD29AD642400F4CB8C /* Preview Assets.xcassets */; };
 		5AD94A8529AEF0B30058E9BE /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD94A8429AEF0B30058E9BE /* DetailView.swift */; };
 		5AD94A8729AEF8320058E9BE /* DessertDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD94A8629AEF8320058E9BE /* DessertDetails.swift */; };
+		5AD94A8929AEFE480058E9BE /* MealDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD94A8829AEFE480058E9BE /* MealDetailModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		5ABC5FCD29AD642400F4CB8C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5AD94A8429AEF0B30058E9BE /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		5AD94A8629AEF8320058E9BE /* DessertDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertDetails.swift; sourceTree = "<group>"; };
+		5AD94A8829AEFE480058E9BE /* MealDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				5A102C7829AD9AFD007EA910 /* MealModel.swift */,
+				5AD94A8829AEFE480058E9BE /* MealDetailModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5ABC5FC929AD642200F4CB8C /* HomeView.swift in Sources */,
+				5AD94A8929AEFE480058E9BE /* MealDetailModel.swift in Sources */,
 				5A102C7729AD9A33007EA910 /* Dessert.swift in Sources */,
 				5A102C7929AD9AFD007EA910 /* MealModel.swift in Sources */,
 				5AD94A8729AEF8320058E9BE /* DessertDetails.swift in Sources */,
