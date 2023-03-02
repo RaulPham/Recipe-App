@@ -52,13 +52,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5A102C7229AD98FD007EA910 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		5A102C7329AD9910007EA910 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,7 +106,6 @@
 				5A102C7429AD991B007EA910 /* ViewModels */,
 				5A102C7329AD9910007EA910 /* Models */,
 				5ABC5FD429AD685400F4CB8C /* Resources */,
-				5A102C7229AD98FD007EA910 /* Helpers */,
 				5ABC5FCA29AD642400F4CB8C /* Assets.xcassets */,
 				5ABC5FCC29AD642400F4CB8C /* Preview Content */,
 			);

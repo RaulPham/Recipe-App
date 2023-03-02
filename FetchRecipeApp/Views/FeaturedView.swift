@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FeaturedView: View {
-      @EnvironmentObject var model: MealModel
+      @EnvironmentObject var mealModel: MealModel
       @State var isDetailViewShowing = false
       @State var viewList = false
       @State var mealId: String = ""
@@ -34,7 +34,7 @@ struct FeaturedView: View {
                       
                       GeometryReader { geo in
                             TabView {
-                                  ForEach(model.dessert.meals.shuffled().prefix(5), id: \.idMeal) { dessert in
+                                  ForEach(mealModel.dessert.meals.shuffled().prefix(5), id: \.idMeal) { dessert in
                                         Button {
                                               self.isDetailViewShowing = true
                                               self.mealId = dessert.idMeal

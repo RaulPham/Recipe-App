@@ -20,14 +20,14 @@ struct ListView: View {
                 
                 ScrollView {
                       LazyVStack(alignment: .leading) {
-                            ForEach(mealModel.dessert.meals, id: \.idMeal) { index in
+                            ForEach(mealModel.dessert.meals, id: \.idMeal) { dessert in
                                   NavigationLink(
-                                    destination: DetailView(mealId: index.idMeal),
+                                    destination: DetailView(mealId: dessert.idMeal),
                                     label: {
                                           HStack(spacing: 20.0) {
-                                                ImageListView(model: index, width: 75, height: 75)
+                                                ImageListView(meal: dessert, width: 75, height: 75)
                                                 VStack(alignment: .leading) {
-                                                      Text(index.strMeal)
+                                                      Text(dessert.strMeal)
                                                             .foregroundColor(.black)
                                                             .font(Font.custom("Avenir Heavy", size: 16))
                                                 }

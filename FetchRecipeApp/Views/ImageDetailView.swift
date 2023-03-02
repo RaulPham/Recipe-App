@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ImageDetailView: View {
-      var model: Detail
+      var detail: Detail
       var width: Double
       var height: Double
       
     var body: some View {
-          AsyncImage(url: URL(string: String(model.strMealThumb))) { image in
+          AsyncImage(url: URL(string: String(detail.strMealThumb))) { image in
                 image
                       .resizable()
                       .scaledToFill()
@@ -43,6 +43,6 @@ struct ImageDetailView: View {
 struct ImageDetailView_Previews: PreviewProvider {
     static var previews: some View {
           let model = MealDetailModel()
-          ImageDetailView(model: model.dessertDetails.meals[0], width: 50, height: 50)
+          ImageDetailView(detail: model.dessertDetails.meals[0], width: 50, height: 50)
     }
 }

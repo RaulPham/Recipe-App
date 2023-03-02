@@ -14,18 +14,18 @@ struct DetailView: View {
       var body: some View {
             ScrollView {
                   VStack {
-                        ForEach(mealDetailModel.dessertDetails.meals, id: \.idMeal) { index in
-                              ImageDetailView(model: index, width: 300, height: 300)
+                        ForEach(mealDetailModel.dessertDetails.meals, id: \.idMeal) { detail in
+                              ImageDetailView(detail: detail, width: 300, height: 300)
                                     .cornerRadius(5)
                                     .shadow(color: Color(.sRGB, red: 0, green: 0, blue: 0, opacity: 0.5), radius: 10, x: -5, y: 6)
 
                               VStack(alignment: .leading) {
-                                    Text(index.strMeal)
+                                    Text(detail.strMeal)
                                           .bold()
                                           .font(Font.custom("Avenir Heavy", size: 24))
                                           .padding(.top, 20)
                                     
-                                    Text(index.strArea)
+                                    Text(detail.strArea)
                                           .font(Font.custom("Avenir", size: 16))
                                     
                                     Divider()
@@ -46,7 +46,7 @@ struct DetailView: View {
                                           .padding([.bottom, .top], 5)
                                     
                                     VStack(alignment: .leading) {
-                                          Text(index.strInstructions)
+                                          Text(detail.strInstructions)
                                                 .font(Font.custom("Avenir", size: 15))
                                           
                                           Divider()
@@ -55,7 +55,7 @@ struct DetailView: View {
                                                 .font(Font.custom("Avenir Heavy", size: 16))
                                                 .padding([.bottom, .top], 5)
                                           
-                                          if let videoURLString = index.strYoutube, let videoURL = URL(string: videoURLString) {
+                                          if let videoURLString = detail.strYoutube, let videoURL = URL(string: videoURLString) {
                                                 Link(destination: videoURL) {
                                                       Text("Watch the video.")
                                                             .foregroundColor(.black)
@@ -64,7 +64,7 @@ struct DetailView: View {
                                                 }
                                           }
                                           
-                                          if let source = index.strSource, !source.isEmpty {
+                                          if let source = detail.strSource, !source.isEmpty {
                                                 Link(destination: URL(string: source)!) {
                                                       Text("Check out the source.")
                                                             .foregroundColor(.black)
@@ -75,7 +75,7 @@ struct DetailView: View {
                                     }
                               }
                               .padding(.horizontal)
-                              .navigationBarTitle(index.strMeal)
+                              .navigationBarTitle(detail.strMeal)
                         }
                   }
             }

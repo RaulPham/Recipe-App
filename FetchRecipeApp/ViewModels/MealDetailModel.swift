@@ -36,32 +36,6 @@ class MealDetailModel: ObservableObject {
             task.resume()
       }
       
-      func extractIngredients() -> [String] {
-            var ingredients = [String]()
-            let mirror = Mirror(reflecting: dessertDetails.meals[0])
-            for case let (label?, value) in mirror.children {
-                  if label.hasPrefix("strIngredient"), let ingredient = value as? String, validateString(str: ingredient) {
-                        if !ingredients.contains(ingredient) {
-                              ingredients.append(ingredient)
-                        }
-                  }
-            }
-            return ingredients
-      }
-      
-      func extractMeasures() -> [String] {
-            var measures = [String]()
-            let mirror = Mirror(reflecting: dessertDetails.meals[0])
-            for case let (label?, value) in mirror.children {
-                  if label.hasPrefix("strMeasure"), let measure = value as? String, validateString(str: measure) {
-                        if !measures.contains(measure) {
-                              measures.append(measure)
-                        }
-                  }
-            }
-            return measures
-      }
-      
       func extractMeasuresAndIngredients() -> [(String, String)] {
             var ingredients = [(String, String)]()
             let mirror = Mirror(reflecting: dessertDetails.meals[0])
@@ -78,7 +52,6 @@ class MealDetailModel: ObservableObject {
             return ingredients
       }
       
-      
       func validateString(str: String) -> Bool {
             if str.isEmpty {
                   return false
@@ -87,24 +60,5 @@ class MealDetailModel: ObservableObject {
             }
             
             return false
-      }
-      
-      func extractSentences(from instructions: String) -> [String] {
-            var sentences: [String] = []
-            var currentSentence: String = ""
-            
-            for char in instructions {
-                  currentSentence.append(char)
-                  if char == "." {
-                        sentences.append(currentSentence)
-                        currentSentence = ""
-                  }
-            }
-            
-            if !currentSentence.isEmpty {
-                  sentences.append(currentSentence)
-            }
-            
-            return sentences
       }
 }
